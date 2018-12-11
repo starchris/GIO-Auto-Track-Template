@@ -50,7 +50,7 @@
   type="text" />"</c>,
 }];
 
-// track API调用示例三
+// track API调用示例三  
 [Growing track:<c>@"<input placeholder="事件标识符" id="api3Eventkey" type="text"/>"</c> withNumber:@<n><input placeholder="数值示例" id="numberValue"
     type="text" /></n> andVariable:
     @{
@@ -83,13 +83,20 @@
     $$('#value1').forEach(el => el.addEventListener('keyup', render));
     $$('#value2').forEach(el => el.addEventListener('keyup', render));
 
+
     function render() {
       let html = '<pre>';
       if (api1.value.trim()) {
         html +=
-          `<copyable id='t1'>GrowingIO gio = GrowingIO.<m>getInstance</m>();
-gio.<m>track</m>(<c>"${api1.value.trim()}"</c>);
+          `<copyable id='t1'>[Growing track:<c>@"${api1.value.trim()}"</c>];
 </copyable><button class="btn" data-clipboard-target="#t1"> 复制内容 </button>
+`;
+      }
+//[Growing track:@"registerSuccess" withVariable:@{@"gender":@"male", @"age":@"21"}];
+      if (api2.value.trim()) {
+        html +=
+          `[Growing track:<c>@"${api2.value.trim()}"</c>;</copyable>
+<button class="btn" data-clipboard-target="#t2"> 复制内容 </button>
 `;
       }
 
@@ -100,27 +107,18 @@ gio.<m>track</m>(<c>"${api1.value.trim()}"</c>);
         const k = k1s[index].value.trim();
         const v = v1s[index].value.trim();
         if (k && v) {
-          t2 += `jsonObject.<m>put</m>(<c>"${k}"</c>, <c>"${v}"</c>);
+          t2 += `withVariable:@{<c>@"${k}"</c>: <c>@"${v}"</c>}];
 `;
         }
       }
 
-      if (api2.value.trim()) {
-        html +=
-          `<copyable id='t2'>GrowingIO gio = GrowingIO.<m>getInstance</m>();
-JSONObject jsonObject = new JSONObject();
-`;
-      }
+      
       if (t2) {
         html += t2;
       }
 
-      if (api2.value.trim()) {
-        html +=
-          `gio.<m>track</m>(<c>"${api2.value.trim()}"</c>, jsonObject);</copyable>
-<button class="btn" data-clipboard-target="#t2"> 复制内容 </button>
-`;
-      }
+
+
 
       if (api3.value.trim() && nv.value.trim()) {
         html +=
