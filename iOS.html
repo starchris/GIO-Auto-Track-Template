@@ -120,36 +120,36 @@
 
 
 
-      if (api3.value.trim() && nv.value.trim()) {
-        html +=
-          `<copyable id='t3'>GrowingIO gio = GrowingIO.<m>getInstance</m>();
-JSONObject jsonObject = new JSONObject();
-`;
-      }
+//       if (api3.value.trim() && nv.value.trim()) {
+//         html +=
+//           `<copyable id='t3'>GrowingIO gio = GrowingIO.<m>getInstance</m>();
+// JSONObject jsonObject = new JSONObject();
+// `;
+//       }
 
-      let t3 = '';
-      let k2s = $$('#var2Key');
-      let v2s = $$('#value2');
-      for (let index = 0; index < k2s.length; index++) {
-        const k = k2s[index].value.trim();
-        const v = v2s[index].value.trim();
-        if (k && v) {
-          t3 += `jsonObject.<m>put</m>(<c>"${k}"</c>, <c>"${v}"</c>);
-`;
-        }
-      }
+//       let t3 = '';
+//       let k2s = $$('#var2Key');
+//       let v2s = $$('#value2');
+//       for (let index = 0; index < k2s.length; index++) {
+//         const k = k2s[index].value.trim();
+//         const v = v2s[index].value.trim();
+//         if (k && v) {
+//           t3 += `jsonObject.<m>put</m>(<c>"${k}"</c>, <c>"${v}"</c>);
+// `;
+//         }
+//       }
 
-      if (t3) {
-        html += t3;
-      }
+//       if (t3) {
+//         html += t3;
+//       }
 
-      if (api3.value.trim() && nv.value.trim()) {
-        html +=
-          `gio.<m>track</m>(<c>"${api3.value.trim()}"</c>, <n>${nv.value.trim()}</n>, jsonObject);</copyable>
-<button
-  class="btn" data-clipboard-target="#t3">  复制内容  </button>
-`;
-      }
+//       if (api3.value.trim() && nv.value.trim()) {
+//         html +=
+//           `gio.<m>track</m>(<c>"${api3.value.trim()}"</c>, <n>${nv.value.trim()}</n>, jsonObject);</copyable>
+// <button
+//   class="btn" data-clipboard-target="#t3">  复制内容  </button>
+// `;
+//       }
 
       $('#result').innerHTML = html + '</pre>';
       new ClipboardJS('button');
