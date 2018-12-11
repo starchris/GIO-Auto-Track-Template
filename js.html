@@ -1,0 +1,167 @@
+<html>
+
+<head>
+  <title>JavaScript自动埋点文档模板</title>
+  <style>
+    #template,
+    #result {
+      flex: 1;
+    }
+
+    body {
+      display: flex;
+      flex-direction: row;
+    }
+
+    pre {
+      font-family: consola, RobotMono, SourceCodePro, monospace;
+    }
+
+    m,
+    m>* {
+      color: purple;
+    }
+
+    c,
+    c>* {
+      color: green;
+    }
+
+    n {
+      color: royalblue;
+    }
+
+    copyable {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="template">
+    <pre>
+// track API调用示例一 
+gio(<c>'track'</c>, <c>"<input placeholder="事件标识符" id="api1Eventkey" type="text"/>"</c>);
+
+// track API调用示例二 
+gio(<c>'track'</c>, <c>"<input placeholder="事件标识符" id="api2Eventkey" type="text"/>"</c>, {
+  <c>"<input placeholder="变量标识符" id="var1Key" type="text"/>"</c>: <c>"<input placeholder="变量值示例" id="value1" 
+  type="text" />"</c>,
+  <c>"<input placeholder="变量标识符" id="var1Key" type="text"/>"</c>: <c>"<input placeholder="变量值示例" id="value1" 
+  type="text" />"</c>,
+  <c>"<input placeholder="变量标识符" id="var1Key" type="text"/>"</c>: <c>"<input placeholder="变量值示例" id="value1" 
+  type="text" />"</c>,
+});
+
+// track API调用示例三  
+gio(<c>'track'</c>, <c>"<input placeholder="事件标识符" id="api3Eventkey" type="text"/>"</c>, <n><input placeholder="数值示例" id="numberValue"
+    type="text" /></n>, {
+      <c>"<input placeholder="变量标识符" id="var2Key" type="text"/>"</c>: <c>"<input placeholder="变量值示例" id="value2" 
+      type="text" />"</c>,
+      <c>"<input placeholder="变量标识符" id="var2Key" type="text"/>"</c>: <c>"<input placeholder="变量值示例" id="value2" 
+      type="text" />"</c>,
+      <c>"<input placeholder="变量标识符" id="var2Key" type="text"/>"</c>: <c>"<input placeholder="变量值示例" id="value2" 
+      type="text" />"</c>,
+}};
+
+
+      </pre>
+  </div>
+  <div id="result">
+    请在左边输入……
+  </div>
+
+  <script>
+    let $ = document.querySelector.bind(document);
+    let api1 = $('#api1EventKey');
+    let api2 = $('#api2Eventkey');
+    let api3 = $('#api3EventKey');
+
+    let nv = $('#numberValue');
+    let $$ = document.querySelectorAll.bind(document);
+    [api1, api2, api3, nv].forEach(el => el.addEventListener('keyup', render));
+    $$('#var1Key').forEach(el => el.addEventListener('keyup', render));
+    $$('#var2Key').forEach(el => el.addEventListener('keyup', render));
+    $$('#value1').forEach(el => el.addEventListener('keyup', render));
+    $$('#value2').forEach(el => el.addEventListener('keyup', render));
+
+
+    function render() {
+      let html = '<pre>';
+      if (api1.value.trim()) {
+        html +=
+          `<copyable id='t1'>gio(<c>'track'</c>, <c>'${api1.value.trim()}'</c>);
+</copyable><button class="btn" data-clipboard-target="#t1"> 复制内容 </button>
+`;
+      }
+      if (api2.value.trim()) {
+        html +=
+          `<copyable id='t2'>gio(<c>'track'</c>, <c>'${api2.value.trim()}'</c>, {
+`;
+      }
+
+      let t2 = '';
+      let k1s = $$('#var1Key');
+      let v1s = $$('#value1');
+      for (let index = 0; index < k1s.length; index++) {
+        const k = k1s[index].value.trim();
+        const v = v1s[index].value.trim();
+        if (k && v) {
+          t2 += `  <c>'${k}'</c>: <c>'${v}'</c>,
+`;
+        }
+      }
+
+      
+      if (t2) {
+        html += t2;
+      }
+
+
+      if (api2.value.trim()) {
+        html +=
+          `});</copyable>
+<button class="btn" data-clipboard-target="#t2"> 复制内容 </button>
+`;
+      }
+
+
+      if (api3.value.trim() && nv.value.trim()) {
+        html +=
+          `<copyable id='t3'>gio(<c>'track'</c>, <c>'${api2.value.trim()}'</c>, <c>${nv.value.trim()}</c>, {
+`;
+      }
+
+      let t3 = '';
+      let k2s = $$('#var2Key');
+      let v2s = $$('#value2');
+      for (let index = 0; index < k2s.length; index++) {
+        const k = k2s[index].value.trim();
+        const v = v2s[index].value.trim();
+        if (k && v) {
+          t3 += `  <c>'${k}'</c>: <c>'${v}'</c>,
+`;
+        }
+      }
+
+      if (t3) {
+        html += t3;
+      }
+
+      if (api3.value.trim() && nv.value.trim()) {
+        html +=
+          `});</copyable>
+<button
+  class="btn" data-clipboard-target="#t3">  复制内容  </button>
+`;
+      }
+
+      $('#result').innerHTML = html + '</pre>';
+      new ClipboardJS('button');
+
+    }
+  </script>
+  <script src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.js"></script>
+</body>
+
+</html>
