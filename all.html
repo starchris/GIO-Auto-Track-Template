@@ -1,0 +1,390 @@
+<html>
+
+<head>
+  <title>自动埋点文档模板</title>
+  <style>
+    #template{
+      flex: 1;
+    }
+
+    #result {
+      flex: 2;
+      display: flex;
+      flex-direction: row;
+    }
+
+    #result > div {
+      border: solid 4px gray;
+      flex: 1;
+    }
+
+    body {
+      display: flex;
+      flex-direction: row;
+    }
+
+    pre {
+      font-family: consola, RobotMono, SourceCodePro, monospace;
+    }
+
+    button {
+      margin-bottom: 12px;
+    }
+
+    m,
+    m>* {
+      color: purple;
+    }
+
+    c,
+    c>* {
+      color: green;
+    }
+
+    n {
+      color: royalblue;
+    }
+
+    copyable {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="template">
+    <pre>
+// track API调用示例一
+GrowingIO gio = GrowingIO.<m>getInstance</m>();
+gio.<m>track</m>(<c>"<input placeholder="事件标识符" id="api1Eventkey" type="text"/>"</c>);
+// track API调用示例二
+GrowingIO gio = GrowingIO.<m>getInstance</m>();
+JSONObject jsonObject = new JSONObject();
+gio.<m>track</m>("<input placeholder="事件标识符" id="api2Eventkey" type="text" />"</c>, jsonObject);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var1Key" type="text"/>"</c>, <c>"<input placeholder="变量值示例" id="value1" 
+  type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var1Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value1"
+    type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var1Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value1"
+    type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var1Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value1"
+type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var1Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value1"
+    type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var1Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value1"
+    type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var1Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value1"
+    type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var1Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value1"
+type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var1Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value1"
+    type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var1Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value1"
+    type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var1Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value1"
+    type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var1Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value1"
+type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var1Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value1"
+    type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var1Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value1"
+    type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var1Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value1"
+    type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var1Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value1"
+type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var1Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value1"
+    type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var1Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value1"
+    type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var1Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value1"
+    type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var1Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value1"
+    type="text" />"</c>);
+// track API调用示例三
+GrowingIO gio = GrowingIO.<m>getInstance</m>();
+JSONObject jsonObject = new JSONObject();
+gio.<m>track</m>(<c>"<input placeholder="事件标识符" id="api3EventKey" type="text" />"</c>, <n><input placeholder="数值示例" id="numberValue"
+    type="text" /></n>, jsonObject);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var2Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value2"
+    type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var2Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value2"
+    type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var2Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value2"
+    type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var2Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value2"
+    type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var2Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value2"
+type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var2Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value2"
+    type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var2Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value2"
+    type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var2Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value2"
+    type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var2Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value2"
+    type="text" />"</c>);
+jsonObject.<m>put</m>(<c>"<input placeholder="变量标识符" id="var2Key" type="text" />"</c>, <c>"<input placeholder="变量值示例" id="value2"
+    type="text" />"</c>);
+      </pre>
+  </div>
+  <div id="result">
+    <div id='android'>请在左边输入……</div>
+    <div id='ios'></div>
+    <div id='js'></div>
+  </div>
+
+  <script>
+    let $ = document.querySelector.bind(document);
+    let api1 = $('#api1EventKey');
+    let api2 = $('#api2Eventkey');
+    let api3 = $('#api3EventKey');
+
+    let nv = $('#numberValue');
+    let $$ = document.querySelectorAll.bind(document);
+    [api1, api2, api3, nv].forEach(el => el.addEventListener('keyup', render));
+    $$('#var1Key').forEach(el => el.addEventListener('keyup', render));
+    $$('#var2Key').forEach(el => el.addEventListener('keyup', render));
+    $$('#value1').forEach(el => el.addEventListener('keyup', render));
+    $$('#value2').forEach(el => el.addEventListener('keyup', render));
+
+
+  function renderAndroid() {
+    let platform = 'android';
+    
+      let html = '<pre>';
+      if (api1.value.trim()) {
+        html +=
+          `<copyable id='${platform}t1'>GrowingIO gio = GrowingIO.<m>getInstance</m>();
+gio.<m>track</m>(<c>"${api1.value.trim()}"</c>);
+</copyable><button class="btn" data-clipboard-target="#${platform}t1"> 复制内容 </button>
+`;
+      }
+
+      let t2 = '';
+      let k1s = $$('#var1Key');
+      let v1s = $$('#value1');
+      for (let index = 0; index < k1s.length; index++) {
+        const k = k1s[index].value.trim();
+        const v = v1s[index].value.trim();
+        if (k && v) {
+          t2 += `jsonObject.<m>put</m>(<c>"${k}"</c>, <c>"${v}"</c>);
+`;
+        }
+      }
+
+      if (api2.value.trim()) {
+        html +=
+          `<copyable id='${platform}t2'>GrowingIO gio = GrowingIO.<m>getInstance</m>();
+JSONObject jsonObject = new JSONObject();
+`;
+      }
+      if (t2) {
+        html += t2;
+      }
+
+      if (api2.value.trim()) {
+        html +=
+          `gio.<m>track</m>(<c>"${api2.value.trim()}"</c>, jsonObject);</copyable>
+<button class="btn" data-clipboard-target="#${platform}t2"> 复制内容 </button>
+`;
+      }
+
+      if (api3.value.trim() && nv.value.trim()) {
+        html +=
+          `<copyable id='${platform}t3'>GrowingIO gio = GrowingIO.<m>getInstance</m>();
+JSONObject jsonObject = new JSONObject();
+`;
+      }
+
+      let t3 = '';
+      let k2s = $$('#var2Key');
+      let v2s = $$('#value2');
+      for (let index = 0; index < k2s.length; index++) {
+        const k = k2s[index].value.trim();
+        const v = v2s[index].value.trim();
+        if (k && v) {
+          t3 += `jsonObject.<m>put</m>(<c>"${k}"</c>, <c>"${v}"</c>);
+`;
+        }
+      }
+
+      if (t3) {
+        html += t3;
+      }
+
+      if (api3.value.trim() && nv.value.trim()) {
+        html +=
+          `gio.<m>track</m>(<c>"${api3.value.trim()}"</c>, <n>${nv.value.trim()}</n>, jsonObject);</copyable>
+<button
+  class="btn" data-clipboard-target="#${platform}t3">  复制内容  </button>
+`;
+      }
+
+      $('#android').innerHTML = html + '</pre>';
+  }
+
+  function renderIOS() {
+
+    let platform = 'ios';
+      let html = '<pre>';
+      if (api1.value.trim()) {
+        html +=
+          `<copyable id='${platform}t1'>[Growing track:<c>@"${api1.value.trim()}"</c>];
+</copyable><button class="btn" data-clipboard-target="#${platform}t1"> 复制内容 </button>
+`;
+      }
+//[Growing track:@"registerSuccess" withVariable:@{@"gender":@"male", @"age":@"21"}];
+      if (api2.value.trim()) {
+        html +=
+          `<copyable id='${platform}t2'>[Growing track:<c>@"${api2.value.trim()}"</c>; withVariable:
+@{
+`;
+      }
+
+      let t2 = '';
+      let k1s = $$('#var1Key');
+      let v1s = $$('#value1');
+      for (let index = 0; index < k1s.length; index++) {
+        const k = k1s[index].value.trim();
+        const v = v1s[index].value.trim();
+        if (k && v) {
+          t2 += `  @{<c>@"${k}"</c>: <c>@"${v}"</c>}];
+`;
+        }
+      }
+
+      
+      if (t2) {
+        html += t2;
+      }
+
+
+      if (api2.value.trim()) {
+        html +=
+          `}];</copyable>
+<button class="btn" data-clipboard-target="#${platform}t2"> 复制内容 </button>
+`;
+      }
+
+
+      if (api3.value.trim() && nv.value.trim()) {
+        html +=
+          `<copyable id='${platform}t3'>[Growing track:<c>@"${api2.value.trim()}"</c>;withNumber:<c>@${nv.value.trim()}</c> andVariable:
+@{
+`;
+      }
+
+      let t3 = '';
+      let k2s = $$('#var2Key');
+      let v2s = $$('#value2');
+      for (let index = 0; index < k2s.length; index++) {
+        const k = k2s[index].value.trim();
+        const v = v2s[index].value.trim();
+        if (k && v) {
+          t3 += `  @{<c>@"${k}"</c>: <c>@"${v}"</c>}];
+`;
+        }
+      }
+
+      if (t3) {
+        html += t3;
+      }
+
+      if (api3.value.trim() && nv.value.trim()) {
+        html +=
+          `}];</copyable>
+<button
+  class="btn" data-clipboard-target="#${platform}t3">  复制内容  </button>
+`;
+      }
+
+      $('#ios').innerHTML = html + '</pre>';
+  }
+
+  function renderJS() {
+    let platform = 'js';
+    
+      let html = '<pre>';
+      if (api1.value.trim()) {
+        html +=
+          `<copyable id='${platform}t1'>gio(<c>'track'</c>, <c>'${api1.value.trim()}'</c>);
+</copyable><button class="btn" data-clipboard-target="#${platform}t1"> 复制内容 </button>
+`;
+      }
+      if (api2.value.trim()) {
+        html +=
+          `<copyable id='${platform}t2'>gio(<c>'track'</c>, <c>'${api2.value.trim()}'</c>, {
+`;
+      }
+
+      let t2 = '';
+      let k1s = $$('#var1Key');
+      let v1s = $$('#value1');
+      for (let index = 0; index < k1s.length; index++) {
+        const k = k1s[index].value.trim();
+        const v = v1s[index].value.trim();
+        if (k && v) {
+          t2 += `  <c>'${k}'</c>: <c>'${v}'</c>,
+`;
+        }
+      }
+
+      
+      if (t2) {
+        html += t2;
+      }
+
+
+      if (api2.value.trim()) {
+        html +=
+          `});</copyable>
+<button class="btn" data-clipboard-target="#${platform}t2"> 复制内容 </button>
+`;
+      }
+
+
+      if (api3.value.trim() && nv.value.trim()) {
+        html +=
+          `<copyable id='${platform}t3'>gio(<c>'track'</c>, <c>'${api2.value.trim()}'</c>, <c>${nv.value.trim()}</c>, {
+`;
+      }
+
+      let t3 = '';
+      let k2s = $$('#var2Key');
+      let v2s = $$('#value2');
+      for (let index = 0; index < k2s.length; index++) {
+        const k = k2s[index].value.trim();
+        const v = v2s[index].value.trim();
+        if (k && v) {
+          t3 += `  <c>'${k}'</c>: <c>'${v}'</c>,
+`;
+        }
+      }
+
+      if (t3) {
+        html += t3;
+      }
+
+      if (api3.value.trim() && nv.value.trim()) {
+        html +=
+          `});</copyable>
+<button
+  class="btn" data-clipboard-target="#${platform}t3">  复制内容  </button>
+`;
+      }
+
+      $('#js').innerHTML = html + '</pre>';
+  }
+
+    function render() {
+      renderAndroid();
+        renderIOS();
+          renderJS();
+      new ClipboardJS('button');
+    }
+  </script>
+  <script src="https://unpkg.com/clipboard@2.0.0/dist/clipboard.js"></script>
+</body>
+
+</html>
