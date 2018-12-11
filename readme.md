@@ -5,3 +5,6 @@
 
 
 [JavaScript模板生成器](https://starchris.github.io/GIO-Auto-Track-Template/js.html)
+
+
+[全语言模板生成器](https://starchris.github.io/GIO-Auto-Track-Template/all.html)
